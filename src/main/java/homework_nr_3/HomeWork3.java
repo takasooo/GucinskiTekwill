@@ -56,5 +56,6 @@ public class HomeWork3 {
             sum += i / (i+2);
         }
         System.out.println(sum);
+
     }
 }
