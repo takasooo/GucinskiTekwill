@@ -1,24 +1,25 @@
 package homework_nr_5;
 
+import java.math.BigInteger;
+
 public class HomeWork5 {
     public static void main(String[] args) {
 
         int[] numbers = new int[101];
-        int sumEven = 0;
-        int sumOdd = 0;
+        long sumEven = 0;
+        BigInteger productOdd = BigInteger.ONE;
         for(int i = 100; i >= 0; i--){
            numbers[i] = i;
             System.out.println(numbers[i] + "; ");
 
-            if(numbers[i] % 2 == 0){
+            if(numbers[i] % 2 == 0)
                 sumEven += numbers[i];
-            }
-            if(numbers[i] % 2 != 0){
-                sumOdd += numbers[i];
-            }
+
+            if(numbers[i] % 2 != 0)
+                productOdd = productOdd.multiply(BigInteger.valueOf(numbers[i]));
         }
-        System.out.println(sumEven);
-        System.out.println(sumOdd);
+        System.out.println("Sum of even numbers: " + sumEven);
+        System.out.println("Product of odd numbers: " + productOdd);
 
         int[] copyNumbers = new int[numbers.length];
 //копия массива но которая идет от 0 до 100
